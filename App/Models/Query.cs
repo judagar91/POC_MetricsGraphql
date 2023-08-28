@@ -1,22 +1,30 @@
-﻿using GraphQLAPI.Models;
+﻿using GraphQLAPI.DTOs;
+using GraphQLAPI.Models;
+using GraphQLAPI.Repository;
 
-namespace GraphQLAPI.App
+namespace GraphQLAPI.App.Models
 {
     public class Query
     {
-        //[GraphQLDeprecated("This query is deprecated")]
-        public Book GetBook() =>
-            new Book
+        private readonly SendsRespository _MSG_Repository;
+
+        public Query(SendsRespository _sendsRepository)
+        {
+            _MSG_Repository = _sendsRepository ?? throw new ArgumentNullException(nameof(_sendsRepository));
+        }
+        public async Task<IEnumerable<Sends>> GetEvents()
+        {
+            IEnumerable<SendsDTO> sendsDTO = await _MSG_Repository.GetAll();
+
+            return sendsDTO.Select(c => new Sends()
             {
-                Title = "C# in depth.",
-                Author = new Author
-                {
-                    Name = "Jon Skeet"
-                },
-                Cultures = new List<string>
-                {
-                    "ES","EN","FR"
-                }
-            };
+                Event = c.Event,
+                CultureCode = c.CultureCode,
+                TotalContacts = c.TotalContacts,
+                Channel = c.Channel,
+                Success = c.Success,
+                CreatedDate = c.CreatedDate
+            });
+        }
     }
 }
