@@ -1,7 +1,6 @@
 ﻿using GraphQLAPI.DTOs;
+using GraphQLAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using System.Data;
 
 namespace GraphQLAPI.Services
 {
@@ -9,7 +8,7 @@ namespace GraphQLAPI.Services
     {
         public SendsContext(DbContextOptions<SendsContext> options) : base(options) { }
         
-        public DbSet<SendsDTO> Sends{ get; set; }
+        public DbSet<Sends> Sends{ get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,7 +18,7 @@ namespace GraphQLAPI.Services
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<SendsDTO>(entity =>
+            modelBuilder.Entity<Sends>(entity =>
             {
                 entity.ToTable("Sends");
 

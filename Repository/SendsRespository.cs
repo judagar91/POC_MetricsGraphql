@@ -7,20 +7,20 @@ namespace GraphQLAPI.Repository
     public class SendsRespository
     {
         
-        private readonly IDbContextFactory<SendsContext> _dbContextFactory;
-        public SendsRespository(IDbContextFactory<SendsContext> dbContextFactory)
-        {
-            _dbContextFactory = dbContextFactory ?? throw new ArgumentNullException(nameof(dbContextFactory));
-        }
+        //private readonly IDbContextFactory<SendsContext> _dbContextFactory;
+        //public SendsRespository(IDbContextFactory<SendsContext> dbContextFactory)
+        //{
+        //    _dbContextFactory = dbContextFactory ?? throw new ArgumentNullException(nameof(dbContextFactory));
+        //}
 
-        public async Task<IEnumerable<SendsDTO>> GetAll()
-        {
+        //public async Task<IEnumerable<SendsDTO>> GetAll()
+        //{
 
-            using (SendsContext context = _dbContextFactory.CreateDbContext())
-            {
-                return await context.Sends.ToListAsync();
-            }
-        }
+        //    using (SendsContext context = _dbContextFactory.CreateDbContext())
+        //    {
+        //        return await context.Sends.ToListAsync();
+        //    }
+        //}
 
         //public IEnumerable<Domain.Customer.Models.Customer> Get(Filter filter)
         //{

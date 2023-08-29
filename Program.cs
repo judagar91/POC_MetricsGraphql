@@ -4,11 +4,12 @@ using GraphQLAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-    builder.Services
-        .AddGraphQLServer()
-        .AddQueryType<Query>();
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>()
+    .AddFiltering();
 
-builder.Services.AddScoped<SendsRespository>();
+//builder.Services.AddScoped<SendsRespository>();
 var provider = builder.Services.BuildServiceProvider();
 var _configuration = provider.GetRequiredService<IConfiguration>();
 var connectionString = _configuration.GetConnectionString("default"); 
