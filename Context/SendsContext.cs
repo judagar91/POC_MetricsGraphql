@@ -1,5 +1,4 @@
-﻿using GraphQLAPI.DTOs;
-using GraphQLAPI.Models;
+﻿using GraphQLAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPI.Services

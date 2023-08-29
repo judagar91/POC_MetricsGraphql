@@ -1,5 +1,4 @@
 using GraphQLAPI.App.Models;
-using GraphQLAPI.Repository;
 using GraphQLAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
