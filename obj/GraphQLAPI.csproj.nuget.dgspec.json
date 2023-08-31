@@ -81,6 +81,10 @@
               "target": "Package",
               "version": "[13.5.1, )"
             },
+            "HotChocolate.Types.Json": {
+              "target": "Package",
+              "version": "[13.5.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -88,6 +92,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Snapshooter.Xunit": {
+              "target": "Package",
+              "version": "[0.13.0, )"
             }
           },
           "imports": [

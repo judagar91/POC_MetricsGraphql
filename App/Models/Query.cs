@@ -1,4 +1,5 @@
-﻿using GraphQLAPI.Models;
+﻿using GraphQLAPI.Context;
+using GraphQLAPI.Models;
 using GraphQLAPI.Services;
 
 namespace GraphQLAPI.App.Models
@@ -50,6 +51,12 @@ namespace GraphQLAPI.App.Models
                 Success = c.Success,
                 CreatedDate = c.CreatedDate
             });
+        }
+
+        [UseDbContext(typeof(AccountContext))]
+        public IQueryable<User> GetUsers ([ScopedService] AccountContext context)
+        {
+            return context.Users.Select(c => new User() { });
         }
     }
 }

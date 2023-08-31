@@ -1,0 +1,6 @@
+[
+  {
+    "name": "UserProps",
+    "fields":  [{"name":  "prop1", "type": "String"}]
+  }
+]

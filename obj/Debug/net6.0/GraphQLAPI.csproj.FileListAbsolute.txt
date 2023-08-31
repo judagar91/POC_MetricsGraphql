@@ -1,5 +1,6 @@
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Models\Settings.json
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\GraphQLAPI.exe
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\GraphQLAPI.deps.json
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\GraphQLAPI.runtimeconfig.json
@@ -31,6 +32,7 @@ C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Transport.Sockets.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.CursorPagination.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.Json.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.Mutations.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.OffsetPagination.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\HotChocolate.Types.Scalars.Upload.dll
@@ -63,6 +65,9 @@ C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Snapshooter.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Snapshooter.Xunit.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
@@ -73,6 +78,10 @@ C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\xunit.assert.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\xunit.core.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\xunit.execution.dotnet.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Yarp.ReverseProxy.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
