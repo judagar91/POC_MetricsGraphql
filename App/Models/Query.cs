@@ -1,55 +1,61 @@
-﻿using GraphQLAPI.Models;
-using GraphQLAPI.Services;
+﻿using GraphQL.Types;
+using GraphQLAPI.Repository;
 
 namespace GraphQLAPI.App.Models
 {
-    public class Query
+    public class Query : ObjectGraphType
     {
-        [UseDbContext(typeof(SendsContext))]
-        public async Task<IQueryable<Sends>> GetEvents([ScopedService] SendsContext context)
+        public Query(ISendRepository sendRepository)
         {
-            IQueryable<Sends> sends = context.Sends.Select(c => new Sends()
-            {
-                Event = c.Event,
-                CultureCode = c.CultureCode,
-                Channel = c.Channel,
-                TotalContacts = c.TotalContacts,
-                Success = c.Success,
-                CreatedDate = c.CreatedDate
-            });
+            Field<ListGraphType<SendType>>(
+                "Sends",
+                resolve: context => sendRepository.GetAll());
 
-            return sends;
         }
-        [UseDbContext(typeof(SendsContext))]
-        public async Task<IQueryable<Sends>> GetEventsbyChannel([ScopedService] SendsContext context, string channel, string success)
-        {
-            IQueryable<Sends> sends = context.Sends.Select(c => new Sends()
-            {
-                Event = c.Event,
-                CultureCode = c.CultureCode,
-                Channel = c.Channel,
-                TotalContacts = c.TotalContacts,
-                Success = c.Success,
-                CreatedDate = c.CreatedDate
-            }).Where(c => c.Channel == channel && c.Success == success);
+        //public async Task<IQueryable<Sends>> GetEvents([ScopedService] SendsContext context)
+        //{
+        //    IQueryable<Sends> sends = context.Sends.Select(c => new Sends()
+        //    {
+        //        Event = c.Event,
+        //        CultureCode = c.CultureCode,
+        //        Channel = c.Channel,
+        //        TotalContacts = c.TotalContacts,
+        //        Success = c.Success,
+        //        CreatedDate = c.CreatedDate
+        //    });
 
-            return sends;
-        }
+        //    return sends;
+        //}
+        //[UseDbContext(typeof(SendsContext))]
+        //public async Task<IQueryable<Sends>> GetEventsbyChannel([ScopedService] SendsContext context, string channel, string success)
+        //{
+        //    IQueryable<Sends> sends = context.Sends.Select(c => new Sends()
+        //    {
+        //        Event = c.Event,
+        //        CultureCode = c.CultureCode,
+        //        Channel = c.Channel,
+        //        TotalContacts = c.TotalContacts,
+        //        Success = c.Success,
+        //        CreatedDate = c.CreatedDate
+        //    }).Where(c => c.Channel == channel && c.Success == success);
 
-        [UseDbContext(typeof(SendsContext))]
-        [UsePaging(IncludeTotalCount = true, DefaultPageSize = 10)]
-        [UseFiltering]
-        public IQueryable<Sends> GetPaginatedSends([ScopedService] SendsContext context)
-        {
-            return context.Sends.Select(c => new Sends()
-            {
-                Event = c.Event,
-                CultureCode = c.CultureCode,
-                Channel = c.Channel,
-                TotalContacts = c.TotalContacts,
-                Success = c.Success,
-                CreatedDate = c.CreatedDate
-            });
-        }
+        //    return sends;
+        //}
+
+        //[UseDbContext(typeof(SendsContext))]
+        //[UsePaging(IncludeTotalCount = true, DefaultPageSize = 10)]
+        //[UseFiltering]
+        //public IQueryable<Sends> GetPaginatedSends([ScopedService] SendsContext context)
+        //{
+        //    return context.Sends.Select(c => new Sends()
+        //    {
+        //        Event = c.Event,
+        //        CultureCode = c.CultureCode,
+        //        Channel = c.Channel,
+        //        TotalContacts = c.TotalContacts,
+        //        Success = c.Success,
+        //        CreatedDate = c.CreatedDate
+        //    });
+        //}
     }
 }
