@@ -1,34 +1,36 @@
 ﻿using GraphQLAPI.App.Models;
 using GraphQLAPI.Services;
 using HotChocolate.Execution;
-using HotChocolate.Execution.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPI.App.Fake
 {
     public class QueryExecutor : IQueryExecutor
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public QueryExecutor(IServiceProvider serviceProvider)
+        public QueryExecutor()
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            
         }
 
-        public void Get(string foo)
+        public async Task Get(string foo)
         {
             try
             {
-
+                
                 var serviceCollection = new ServiceCollection();
-                var executor = serviceCollection.AddGraphQLServer()
+                serviceCollection.AddPooledDbContextFactory<SendsContext>(x => x.UseSqlServer("Server=JUANGARCIA-NEWS\\SQLEXPRESS;Database=wl_message_dev;Trusted_Connection=True;TrustServerCertificate=true"));
+                var executor = serviceCollection
+                        .AddGraphQLServer()
                         .AddQueryType<Query>()
+                        .RegisterDbContext<SendsContext>(DbContextKind.Pooled)
                         .AddFiltering()
-                        
-                                 .BuildRequestExecutorAsync();
-          
-                serviceCollection.AddDbContextFactory<SendsContext>(o => o.UseSqlServer("Server=JUANGARCIA-NEWS\\SQLEXPRESS;Database=wl_message_dev;Trusted_Connection=True;TrustServerCertificate=true"));
-                var build = executor.Result.ExecuteAsync(foo);
+                        .BuildRequestExecutorAsync();
+
+                //ConfigureServices(serviceCollection);
+                var build = await executor.Result.ExecuteAsync(foo);
+
+                var result = build.ExpectQueryResult().Data.AsEnumerable();
+                    
             }
             catch (Exception ex)
             {

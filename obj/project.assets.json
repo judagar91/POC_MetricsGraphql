@@ -46,7 +46,7 @@
           }
         }
       },
-      "BananaCakePop.Middleware/9.0.0": {
+      "BananaCakePop.Middleware/7.0.4": {
         "type": "package",
         "dependencies": {
           "Yarp.ReverseProxy": "2.0.1"
@@ -2011,14 +2011,14 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "BananaCakePop.Middleware/9.0.0": {
-      "sha512": "mua2M5p4kT1DjrfQW+lMRoa3x4qH3P7turwk9B5dzw2nC5teA9X16ejl9RoTmJEZOYyZPFUMYYP/R7VtHvXoYg==",
+    "BananaCakePop.Middleware/7.0.4": {
+      "sha512": "MjXgiZ2WTmijyojmuiDMoqa2rokg0yNROwpe6yQibFre6D3CPdmCiIt48YE9+8ZBwgss5BK49iluktHFuf0XfQ==",
       "type": "package",
-      "path": "bananacakepop.middleware/9.0.0",
+      "path": "bananacakepop.middleware/7.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "bananacakepop.middleware.9.0.0.nupkg.sha512",
+        "bananacakepop.middleware.7.0.4.nupkg.sha512",
         "bananacakepop.middleware.nuspec",
         "lib/net6.0/BananaCakePop.Middleware.dll",
         "lib/net7.0/BananaCakePop.Middleware.dll"
@@ -5244,7 +5244,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BananaCakePop.Middleware >= 9.0.0",
       "HotChocolate >= 13.5.1",
       "HotChocolate.AspNetCore >= 13.5.1",
       "HotChocolate.AspNetCore.Authorization >= 13.5.1",
@@ -5306,10 +5305,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "BananaCakePop.Middleware": {
-            "target": "Package",
-            "version": "[9.0.0, )"
-          },
           "HotChocolate": {
             "target": "Package",
             "version": "[13.5.1, )"
