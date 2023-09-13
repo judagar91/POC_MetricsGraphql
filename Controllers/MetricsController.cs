@@ -1,6 +1,4 @@
 ﻿using GraphQLAPI.App.Fake;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Metadata;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GraphQLAPI.Controllers
@@ -26,8 +24,8 @@ namespace GraphQLAPI.Controllers
             else
             {
                 var foo = query.ToString();
-                _queryExecutor.Get(foo);
-                return Ok();
+                var values = await _queryExecutor.Get(foo);
+                return Ok(values);
             }
         }
     }

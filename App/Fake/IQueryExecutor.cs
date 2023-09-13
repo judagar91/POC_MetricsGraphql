@@ -5,6 +5,6 @@ namespace GraphQLAPI.App.Fake
 {
     public interface IQueryExecutor
     {
-        Task Get(string foo);
+        Task<string> Get(string foo);
     }
 }

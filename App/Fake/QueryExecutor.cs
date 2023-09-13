@@ -2,6 +2,8 @@
 using GraphQLAPI.Services;
 using HotChocolate.Execution;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace GraphQLAPI.App.Fake
 {
@@ -12,7 +14,7 @@ namespace GraphQLAPI.App.Fake
             
         }
 
-        public async Task Get(string foo)
+        public async Task<string> Get(string foo)
         {
             try
             {
@@ -30,13 +32,18 @@ namespace GraphQLAPI.App.Fake
                 var build = await executor.Result.ExecuteAsync(foo);
 
                 var result = build.ExpectQueryResult().Data.AsEnumerable();
-                    
+
+                return JsonConvert.SerializeObject(result).ToString();
+
+
             }
             catch (Exception ex)
             {
 
                 throw;
+                
             }
+
   
         }
     }

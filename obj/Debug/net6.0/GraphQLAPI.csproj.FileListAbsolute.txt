@@ -106,3 +106,4 @@ C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\obj\Debug\net6.
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\obj\Debug\net6.0\GraphQLAPI.pdb
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\obj\Debug\net6.0\GraphQLAPI.genruntimeconfig.cache
 C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\obj\Debug\net6.0\ref\GraphQLAPI.dll
+C:\Users\JuanDavidGarciaArang\source\repos\GraphQLAPI\GraphQLAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
