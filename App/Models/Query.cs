@@ -1,5 +1,9 @@
 ﻿using GraphQLAPI.Models;
 using GraphQLAPI.Services;
+using System.Net.NetworkInformation;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 
 namespace GraphQLAPI.App.Models
 {
@@ -37,7 +41,7 @@ namespace GraphQLAPI.App.Models
         }
 
         [UseDbContext(typeof(SendsContext))]
-        [UsePaging(IncludeTotalCount = true, DefaultPageSize = 10)]
+        [UsePaging(IncludeTotalCount = true,  DefaultPageSize = 10)]
         [UseFiltering]
         public IQueryable<Sends> GetPaginatedSends([ScopedService] SendsContext context)
         {
@@ -50,6 +54,20 @@ namespace GraphQLAPI.App.Models
                 Success = c.Success,
                 CreatedDate = c.CreatedDate
             });
+        }
+
+        [UseDbContext(typeof(SendsContext))]
+        public async Task<IQueryable<EventsbyChannel>> GetMetrics([ScopedService] SendsContext context)
+        {
+            var query = from c in context.Sends
+                        group c by c.Channel into grouped
+                        select new EventsbyChannel
+                        {
+                            channel = grouped.Key,  // Obtener el valor de la clave del grupo (el canal)
+                            cantidad = grouped.Count()  // Contar la cantidad de elementos en el grupo
+                        };
+
+            return query;
         }
     }
 }

@@ -14,9 +14,6 @@ var _configuration = provider.GetRequiredService<IConfiguration>();
 var connectionString = _configuration.GetConnectionString("default"); 
 builder.Services.AddDbContextFactory<SendsContext>(o => o.UseSqlServer(connectionString));
 
-
-
-
 var app = builder.Build();
 app.MapGraphQL();
 app.Run();
